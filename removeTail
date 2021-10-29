@@ -16,3 +16,21 @@
 #Fin
 
 */
+
+
+  DList removeTail(Dlist l){
+    if(l!=NULL){
+      if(l->next==NULL){
+        free(l);
+        l=NULL;
+      }else{
+        DlistElement* p=l;
+        while (p->next->next!=NULL) {
+          p=p->next;
+        }
+        free(p->next);
+        p->next=NULL;
+      }
+    }
+    return l;
+  }

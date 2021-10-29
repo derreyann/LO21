@@ -1,0 +1,69 @@
+//V1
+
+/**
+Fonction insert(l: liste entiers): liste entiers
+#Début
+  Si estVide(l) alors
+    l<-insertTail(l, e);
+  Sinon
+    p: DlistElement<-tête(l)
+    Tant que (valeurtête(p)=<e) ET non estVide(valeur(suivant(p))) faire
+      p<-suivant(p)
+    Fait
+    newel : DlistElement<-créerDListElement()
+    valeur(newel)<-e
+    Si (valeur(tête(p))>e) //insertion milieu de lsite
+  /!\ ordre important
+  1    suivant(newel)<-p
+  2    précédent(newel)<-precedent(p)
+  3    Si non estVide(précédent(p))
+  |        alors suivant(precedent(p))<-newel
+  |     Sinon
+  |        tête(l)<-newel
+  |     finSi
+  4    precedent(p)<-newel     // super important l'order
+    Sinon //fin de tête
+      suivant(newel)<-NULL
+      précédent(newel)<-NULL
+      suivant(p)<-newel
+    finSi
+  finSi
+  insert<-l
+*/
+
+//V2
+
+/**
+Fonction insert(l:liste entiers):lsite entiers
+#Début
+  Si estVide(l) alors
+    l<-insererTete(l,e)
+  Sinon
+    newel: DlistElement<-créerDListElement()
+    valeur(newel)<-e
+    Si valeur(queue(l)<e) alors //insertion fin de liste
+      suivant(newel)<-NULL
+      précédent(newel)<-queue(l)
+      suivant(queue(l))<-newel
+      queue(l)<-newel
+    Sinon
+      p:DlistElement<-tête(l)
+      Tant que (valeur(tête(l))=<e ET non estVide(suivant(p)))
+        p<-suivant(p)
+      Fait
+      Si valeur(tête(p)>e) alors
+        suivant(newel)<-p
+        précédent(newel)<-précédent(p)
+        Si non estVide(précédent(p)) alors
+          suivant(précédent(p))<-newel
+          précédent(p)<-newel
+        Sinon
+          tête(l)<-newel
+        finSi
+      finSi
+    finSi
+    taille(l)<-taille(l)+1
+  finSi
+  insert<-l
+#Fin
+*/
