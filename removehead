@@ -1,0 +1,72 @@
+/**
+V1
+Fonction removeHead(l: liste entiers):liste entiers
+
+#Début
+  p: DlistElement<-NULL
+  Si non estVide(l) alors
+    p<-suivant(tête(l))
+    Si non estVide(p) alors
+      precedent(p)<-NULL
+    finSi
+    libérer(tête(l))
+  finSi
+  removeHead<-p
+#Fin
+*/
+
+/**
+Docum
+l: liste d'entiers
+p: une place dans une liste d'entier
+*/
+
+Dlist removeHead(Dlist l){
+  DlistElement p=NULL;
+  if (l!=NULL){
+    p=l->next;
+    if(p!=NULL){
+      p->NULL;
+    }
+    free(l)
+  }
+  return p;
+}
+
+/**
+V2
+Fonction removeHead(l:liste entiers):liste entiers
+
+#Début
+  p:DlistElement<-INDEFINI
+  Si non estVide(l) alors
+    p<-suivant(tête(l))
+    Si non estVide(l) alors
+      précédent(p)<-NULL
+    finSi
+    libérer(tête(l))
+    tête(l)<-p
+    Si taille(l)=1 alors
+      queue(l)<-NULL
+    finSi
+    taille(l)<-taille(l)-1
+  finSi
+  removeHead<-l
+  */
+
+Dlist removeHead(Dlist l){
+  DlistElement p=NULL;
+  if (l!=NULL){
+    p=l.head->next;
+    if(p!=NULL){
+      p->prev=NULL;
+    }
+    free(l.head);
+    l.head->p;
+    if(l.size==1){
+      l.last=NULL;
+    }
+    l.size=l.size-1
+  }
+  return l;
+}
