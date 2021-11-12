@@ -1,0 +1,14 @@
+//PB Ecrire l'algo récursif d'un sous-programme permettant de compter le nombre d'éléments d'une liste donnée
+
+Fonction countR(l: liste <Entiers>): Entiers
+Début{
+    Si estVide(l) alors{
+        countR<-0
+    }
+    Sinon{
+        countR<- 1+countR(reste(l))
+
+    }
+    finsi
+}
+Fin
