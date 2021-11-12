@@ -1,0 +1,74 @@
+Fonction insérerQR(l:liste<Entier>, e Entier): Liste <Entier>
+
+Cas faciles:
+    Si estVide(l) alors{
+        insérerQR <- NewElement(e);
+    }
+    sinon{
+        insérerQR<-insererTête(insererQR(reste(l), e), valeurTête(l))
+    }
+
+avec Fonction newElement(e: entier)
+Début{
+    newel:ListElement <- créerElement();
+    valeur(newel)<-entier
+    suivant(newel)<-NULL
+    newElement<-newel
+}
+
+Fonction insérerQR(){
+    Début{
+        Si estVide(l) alors{
+            insérerQR<-newElement(e)
+        }Sinon{
+            suivant(tête(l))<-inséererQr(reste(l), e)
+            insérerQR<-l;
+        }
+        finqi
+    }FIN
+}
+
+//reste(l) == suivant(l) mais en récursif
+
+Fonction removeTR(l:liste<entier>):l liste Entiers{
+    Debut†{
+        Si estVide(l) alors{
+            removeTailR<-l
+        }
+        Sinon{
+            Si estVide(reste(l)) alors{
+                free(tête(l))
+                removeTailR<-NULL
+        }
+        Sinon{
+            suivant(tête(l))<-RemoveTailR(reste(l)
+            RemoveTailR<-l
+        }
+        }
+    }
+}
+
+Fonction inverserListe(liste<entiers):liste entiers newl:
+Début{
+    Si estVide(l) alors{
+        inverserListe<-l
+    }Sinon{
+        Si estVide(reste(l)) alors{
+            inverserListe<-newElement(insérerTête(l))
+        }
+        Sinon{
+            inverserListe<-insérerQR(inverserListe(tête(l)), valeurTête(l))
+        }
+        finsi
+    }
+    finsi
+}Fin
+
+Fonction reverse (v2) (liste): même liste:
+Début{
+    Si estVide(l) alors{
+        reverse<-l
+    }Sinon{
+        
+    }
+}
