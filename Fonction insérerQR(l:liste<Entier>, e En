@@ -71,6 +71,7 @@ Début{
     }Sinon{
         R : listeElement <- suivant(l)
         l2: liste entier <- reverse(reste(l))
+        suivant(tête(l))<-NULL
         suivant(r)<-tête(l)
         reverse<-l2
     }
