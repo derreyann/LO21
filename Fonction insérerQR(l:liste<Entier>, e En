@@ -69,6 +69,9 @@ Début{
     Si estVide(l) alors{
         reverse<-l
     }Sinon{
-        
+        R : listeElement <- suivant(l)
+        l2: liste entier <- reverse(reste(l))
+        suivant(r)<-tête(l)
+        reverse<-l2
     }
 }
